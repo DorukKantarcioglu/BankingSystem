@@ -7,7 +7,7 @@ class BankAccount
 {
     public:
         BankAccount();
-        BankAccount(int, std::string, int = 0);
+        BankAccount(int, std::string = "", int = 0);
         friend std::ostream& operator <<(std::ostream&, const BankAccount&);
         void operator =(const BankAccount&);
         bool operator ==(const BankAccount&) const;

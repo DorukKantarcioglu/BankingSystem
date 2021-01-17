@@ -48,7 +48,20 @@ bool Bank::registerAccount(int initialBalance)
 // Last checkpoint
 bool Bank::terminateAccount()
 {
-    if (accounts.accountExists(people.getHeadAccountNo())) {
-
+    if (numberOfPeople > 0) {
+        BankAccount acc;
+        if (accounts.getAccount(people.getHeadAccountNo(), acc)) {
+            accounts.remove(acc);
+            people.setHeadCurrency(true, acc.getBalance());
+            people.setHeadAccountNo(0);
+            numberOfAccounts--;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
     }
 }

@@ -108,7 +108,7 @@ void LinkedList::remove(LinkedListItem item)
     }
 }
 
-bool LinkedList::accountExists(int accountNo)
+bool LinkedList::accountExists(int accountNo) const
 {
     for (Node* n = head; n != NULL; n = n->next) {
         if (n->data.getNumber() == accountNo) {
@@ -116,6 +116,19 @@ bool LinkedList::accountExists(int accountNo)
         }
     }
     return false;
+}
+
+bool LinkedList::getAccount(int accountNo, BankAccount& account) const
+{
+    bool exists = false;
+    for (Node* n = head; n != NULL; n = n->next) {
+        if (n->data.getNumber() == accountNo) {
+            exists = true;
+            account = n->data;
+            break;
+        }
+    }
+    return exists;
 }
 
 bool LinkedList::depositToAccount(int accountNo, int amount)
