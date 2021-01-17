@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1610788357 source:c:\users\doruk_etacptp\desktop\bankingsystem\linkedlist.cpp
+	"LinkedList.h"
+	<iostream>
+
+1610782067 c:\users\doruk_etacptp\desktop\bankingsystem\linkedlist.h
+	"BankAccount.h"
+
+1610826466 source:c:\users\doruk_etacptp\desktop\bankingsystem\queue.cpp
+	"Queue.h"
+	<iostream>
+
+1610825171 c:\users\doruk_etacptp\desktop\bankingsystem\queue.h
+	"Person.h"
+
+1610826444 source:c:\users\doruk_etacptp\desktop\bankingsystem\main.cpp
+	"LinkedList.h"
+	"Queue.h"
+	<iostream>
+
+1610822369 source:c:\users\doruk_etacptp\desktop\bankingsystem\bankaccount.cpp
+	"BankAccount.h"
+
+1610823622 c:\users\doruk_etacptp\desktop\bankingsystem\bankaccount.h
+	<iostream>
+	<string>
+
+1610826016 source:c:\users\doruk_etacptp\desktop\bankingsystem\person.cpp
+	"Person.h"
+
+1610825570 c:\users\doruk_etacptp\desktop\bankingsystem\person.h
+	<iostream>
+	<string>
+
