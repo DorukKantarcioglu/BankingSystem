@@ -14,7 +14,7 @@ bool Bank::admitPerson(string name, int currency)
     return true;
 }
 
-bool Bank::escortPerson()
+bool Bank::dismissPerson()
 {
     if (numberOfPeople > 0) {
         people.dequeue();
@@ -29,7 +29,7 @@ bool Bank::escortPerson()
 bool Bank::registerAccount(int initialBalance)
 {
     if (numberOfPeople > 0) {
-        if (initialBalance > people.getHeadCurrency()) {
+        if (initialBalance > people.getHeadCurrency() || accounts.accountExists(people.getHeadAccountNo())) {
             return false;
         }
         else {
@@ -64,4 +64,14 @@ bool Bank::terminateAccount()
     else {
         return false;
     }
+}
+
+void Bank::print() const
+{
+    cout << "Number of people in the bank: " << numberOfPeople << endl;
+    cout << "Account infos:" << endl;
+    accounts.display();
+    cout << endl;
+    cout << "People info" << endl;
+    people.display();
 }

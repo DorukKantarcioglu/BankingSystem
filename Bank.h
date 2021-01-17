@@ -8,12 +8,13 @@ class Bank
     public:
         Bank();
         bool admitPerson(std::string, int);
-        bool escortPerson();
+        bool dismissPerson();
         bool registerAccount(int);
         bool terminateAccount();
         void deposit(int);
         void withdraw(int);
         void transferToAccount(int, int);
+        void print() const;
     private:
         int numberOfPeople, numberOfAccounts;
         Queue people;
