@@ -108,6 +108,33 @@ void LinkedList::remove(LinkedListItem item)
     }
 }
 
+bool LinkedList::depositToAccount(int accountNo, int amount)
+{
+    for (Node* n = head; n != NULL; n = n->next) {
+        if (n->data.getNumber() == accountNo) {
+            n->data.deposit(amount);
+            return true;
+        }
+    }
+    return false;
+}
+
+bool LinkedList::withdrawFromAccount(int accountNo, int amount)
+{
+    for (Node* n = head; n != NULL; n = n->next) {
+        if (n->data.getNumber() == accountNo) {
+            if (n->data.getBalance() - amount >= 0) {
+                n->data.withdraw(amount);
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+    return false;
+}
+
 LinkedList::Node* LinkedList::getNode(LinkedListItem item)
 {
     if (isEmpty()) {

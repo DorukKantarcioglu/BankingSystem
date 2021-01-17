@@ -18,19 +18,28 @@ int main()
     LL.display();
     LL.remove(acc2);
     LL.display();
-
+    cout << endl << endl;
     acc1.deposit(5789);
     cout << acc1 << endl;
-    acc1.withdraw(9876);
-    cout << acc1 << endl;
+    cout << "--------------" << endl;
+    cout << acc2 << endl;
+    LL.insertToHead(acc1);
+    LL.insertToTail(acc2);
+    LL.display();
+    LL.depositToAccount(47, 90000);
+    LL.display();
+    LL.withdrawFromAccount(47, 1234567);
+    LL.display();
+    if (LL.withdrawFromAccount(47, 123)) {
+        cout << "cash money" << endl;
+    }
+    LL.display();
+    LL.depositToAccount(35, 999999);
+    LL.display();
+    if (LL.withdrawFromAccount(35, 1005788))
+        cout << "broke" << endl;
 
-    Person p1, p3;
-    Person p2("Tay Keith", 3572);
-    Queue q;
-    q.enqueue(p2);
-    q.getHead(p3);
-    cout << p3 << endl;
-    q.enqueue(p1);
-    q.display();
-
+    LL.display();
+    if (LL.withdrawFromAccount(35, 1005788))
+        cout << "broke" << endl;
 }

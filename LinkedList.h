@@ -14,6 +14,9 @@ class LinkedList
         void insertToHead(LinkedListItem);
         void insertToTail(LinkedListItem);
         void remove(LinkedListItem);
+        // Methods to adjust intra-account transactions:
+        bool depositToAccount(int, int);
+        bool withdrawFromAccount(int, int);
     private:
         struct Node {
             LinkedListItem data;

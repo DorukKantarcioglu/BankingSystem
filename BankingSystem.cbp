@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Bank.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="BankAccount.cpp" />
 		<Unit filename="BankAccount.h">
 			<Option target="&lt;{~None~}&gt;" />
