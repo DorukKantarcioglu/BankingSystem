@@ -7,11 +7,24 @@ Bank::Bank()
     numberOfAccounts = 0;
 }
 
-bool Bank::admitPerson(string name, int currency)
+bool Bank::admitNewPerson(string name, int currency)
 {
     people.enqueue(Person(name, currency));
     numberOfPeople++;
     return true;
+}
+
+bool Bank::admitExistingPerson(string name, int currency, int accountNo)
+{
+    BankAccount account;
+    if (accounts.getAccount(accountNo, account) && account.getName() == name) {
+        people.enqueue(Person(name, currency, accountNo));
+        numberOfPeople++;
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 bool Bank::dismissPerson()
@@ -34,8 +47,12 @@ bool Bank::registerAccount(int initialBalance)
         }
         else {
             people.setHeadCurrency(false, initialBalance);
-            people.setHeadAccountNo(numberOfAccounts + 1);
-            accounts.insertToHead(BankAccount(numberOfAccounts + 1, people.getHeadName(), initialBalance));
+            int availableNo = 1;
+            while (accounts.accountExists(availableNo)) {
+                availableNo++;
+            }
+            people.setHeadAccountNo(availableNo);
+            accounts.insertToHead(BankAccount(availableNo, people.getHeadName(), initialBalance));
             numberOfAccounts++;
             return true;
         }
@@ -45,14 +62,13 @@ bool Bank::registerAccount(int initialBalance)
     }
 }
 
-// Last checkpoint
 bool Bank::terminateAccount()
 {
     if (numberOfPeople > 0) {
-        BankAccount acc;
-        if (accounts.getAccount(people.getHeadAccountNo(), acc)) {
-            accounts.remove(acc);
-            people.setHeadCurrency(true, acc.getBalance());
+        BankAccount account;
+        if (accounts.getAccount(people.getHeadAccountNo(), account)) {
+            accounts.remove(account);
+            people.setHeadCurrency(true, account.getBalance());
             people.setHeadAccountNo(0);
             numberOfAccounts--;
             return true;
@@ -66,9 +82,32 @@ bool Bank::terminateAccount()
     }
 }
 
+bool Bank::deposit(int amount)
+{
+    if (numberOfPeople > 0) {
+        if (accounts.accountExists(people.getHeadAccountNo())) {
+            if (amount > people.getHeadCurrency()) {
+                return false;
+            }
+            else {
+                people.setHeadCurrency(false, amount);
+                accounts.depositToAccount(people.getHeadAccountNo(), amount);
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+}
+
 void Bank::print() const
 {
     cout << "Number of people in the bank: " << numberOfPeople << endl;
+    cout << "Number of bank accounts: " << numberOfAccounts << endl;
     cout << "Account infos:" << endl;
     accounts.display();
     cout << endl;

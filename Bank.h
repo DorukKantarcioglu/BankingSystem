@@ -7,13 +7,14 @@ class Bank
 {
     public:
         Bank();
-        bool admitPerson(std::string, int);
+        bool admitNewPerson(std::string, int);
+        bool admitExistingPerson(std::string, int, int);
         bool dismissPerson();
-        bool registerAccount(int);
+        bool registerAccount(int = 0);
         bool terminateAccount();
-        void deposit(int);
-        void withdraw(int);
-        void transferToAccount(int, int);
+        bool deposit(int);
+        bool withdraw(int);
+        bool transferToAccount(int, int);
         void print() const;
     private:
         int numberOfPeople, numberOfAccounts;

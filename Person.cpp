@@ -19,6 +19,7 @@ void Person::operator =(const Person& person)
     if (this != &person) {
         name = person.name;
         currency = person.currency;
+        accountNo = person.accountNo;
     }
 }
 
