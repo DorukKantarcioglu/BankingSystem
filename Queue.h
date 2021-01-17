@@ -14,6 +14,12 @@ class Queue
         void enqueue(QueueItemType);
         void dequeue();
         void display() const;
+        // Methods to access/modify the head's data members
+        std::string getHeadName() const;
+        int getHeadCurrency() const;
+        int getHeadAccountNo() const;
+        void setHeadCurrency(bool, int);
+        void setHeadAccountNo(int);
     private:
         struct Node {
             QueueItemType data;

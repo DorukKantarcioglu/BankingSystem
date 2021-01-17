@@ -88,7 +88,7 @@ void Queue::dequeue()
 void Queue::display() const
 {
     if (isEmpty()) {
-        cout << "The list is empty." << endl;
+        cout << "The queue is empty." << endl;
     }
     else {
         cout << "The queue items:" << endl;
@@ -101,3 +101,27 @@ void Queue::display() const
     }
 }
 
+string Queue::getHeadName() const
+{
+    return head->data.getName();
+}
+
+int Queue::getHeadCurrency() const
+{
+    return head->data.getCurrency();
+}
+
+int Queue::getHeadAccountNo() const
+{
+    return head->data.getAccountNo();
+}
+
+void Queue::setHeadCurrency(bool withdrawing, int amount)
+{
+    head->data.setCurrency(withdrawing, amount);
+}
+
+void Queue::setHeadAccountNo(int personAccountNo)
+{
+    head->data.setAccountNo(personAccountNo);
+}

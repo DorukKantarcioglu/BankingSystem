@@ -1,10 +1,11 @@
 #include "Person.h"
 using namespace std;
 
-Person::Person(string personName, int personCurrency)
+Person::Person(string personName, int personCurrency, int personAccountNo)
 {
     name = personName;
     currency = personCurrency;
+    accountNo = personAccountNo;
 }
 
 ostream& operator <<(ostream& os, const Person& person)
@@ -31,6 +32,11 @@ int Person::getCurrency() const
     return currency;
 }
 
+int Person::getAccountNo() const
+{
+    return accountNo;
+}
+
 void Person::setCurrency(bool withdrawing, int amount)
 {
     if (withdrawing) {
@@ -39,4 +45,9 @@ void Person::setCurrency(bool withdrawing, int amount)
     else {
         currency -= amount;
     }
+}
+
+void Person::setAccountNo(int personAccountNo)
+{
+    accountNo = personAccountNo;
 }

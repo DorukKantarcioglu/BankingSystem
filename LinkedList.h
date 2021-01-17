@@ -14,7 +14,8 @@ class LinkedList
         void insertToHead(LinkedListItem);
         void insertToTail(LinkedListItem);
         void remove(LinkedListItem);
-        // Methods to adjust intra-account transactions:
+        // Methods to adjust inter/intra-account transactions:
+        bool accountExists(int);
         bool depositToAccount(int, int);
         bool withdrawFromAccount(int, int);
     private:

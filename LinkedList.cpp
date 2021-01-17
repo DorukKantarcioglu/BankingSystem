@@ -108,6 +108,16 @@ void LinkedList::remove(LinkedListItem item)
     }
 }
 
+bool LinkedList::accountExists(int accountNo)
+{
+    for (Node* n = head; n != NULL; n = n->next) {
+        if (n->data.getNumber() == accountNo) {
+            return true;
+        }
+    }
+    return false;
+}
+
 bool LinkedList::depositToAccount(int accountNo, int amount)
 {
     for (Node* n = head; n != NULL; n = n->next) {
