@@ -104,6 +104,51 @@ bool Bank::deposit(int amount)
     }
 }
 
+bool Bank::withdraw(int amount)
+{
+    if (numberOfPeople > 0) {
+        BankAccount account;
+        if (accounts.getAccount(people.getHeadAccountNo(), account)) {
+            if (account.getBalance() < amount) {
+                return false;
+            }
+            else {
+                people.setHeadCurrency(true, amount);
+                accounts.withdrawFromAccount(people.getHeadAccountNo(), amount);
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+}
+
+bool Bank::transferToAccount(int accountNo, int amount)
+{
+    if (numberOfPeople > 0) {
+        if (accounts.accountExists(accountNo)) {
+            if (amount > people.getHeadCurrency()) {
+                return false;
+            }
+            else {
+                people.setHeadCurrency(false, amount);
+                accounts.depositToAccount(accountNo, amount);
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+}
+
 void Bank::print() const
 {
     cout << "Number of people in the bank: " << numberOfPeople << endl;

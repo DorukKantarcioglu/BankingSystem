@@ -13,7 +13,7 @@
 1610893193 c:\users\doruk_etacptp\desktop\bankingsystem\queue.h
 	"Person.h"
 
-1610923294 source:c:\users\doruk_etacptp\desktop\bankingsystem\main.cpp
+1610969854 source:c:\users\doruk_etacptp\desktop\bankingsystem\main.cpp
 	"Bank.h"
 
 1610822369 source:c:\users\doruk_etacptp\desktop\bankingsystem\bankaccount.cpp
@@ -30,10 +30,10 @@
 	<iostream>
 	<string>
 
-1610923562 source:c:\users\doruk_etacptp\desktop\bankingsystem\bank.cpp
+1610969724 source:c:\users\doruk_etacptp\desktop\bankingsystem\bank.cpp
 	"Bank.h"
 
-1610922837 c:\users\doruk_etacptp\desktop\bankingsystem\bank.h
+1610969706 c:\users\doruk_etacptp\desktop\bankingsystem\bank.h
 	"Queue.h"
 	"LinkedList.h"
 

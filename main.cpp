@@ -34,10 +34,15 @@ int main()
     b.registerAccount(3500);
     b.print();
     b.dismissPerson();
-    b.admitExistingPerson("DJ Tiesto", 7890, 2);
+    b.admitExistingPerson("Tiesto", 7890, 2);
     b.print();
-//    b.deposit(7890);
-//    b.print();
+    b.deposit(7890);
+    b.print();
+    b.withdraw(4500);
+    cout << "-----CHECKPOINT-----" << endl << endl;
+    b.print();
+    b.transferToAccount(1, 567);
+    b.print();
 //    b.terminateAccount();
 //    b.print();
 //    b.dismissPerson();
