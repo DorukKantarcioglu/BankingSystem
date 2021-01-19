@@ -11,18 +11,31 @@ bool Bank::admitNewPerson(string name, int currency)
 {
     people.enqueue(Person(name, currency));
     numberOfPeople++;
+    cout << "Process successful:" << endl;
+    cout << "New person " << name << " with currency " << currency << " has been admitted to the bank." << endl;
     return true;
 }
 
 bool Bank::admitExistingPerson(string name, int currency, int accountNo)
 {
     BankAccount account;
-    if (accounts.getAccount(accountNo, account) && account.getName() == name) {
-        people.enqueue(Person(name, currency, accountNo));
-        numberOfPeople++;
-        return true;
+    if (accounts.getAccount(accountNo, account)) {
+        if (account.getName() == name) {
+            people.enqueue(Person(name, currency, accountNo));
+            numberOfPeople++;
+            cout << "Process successful:" << endl;
+            cout << "Existing person " << name << " with currency " << currency << " and account number " << accountNo <<" has been admitted to the bank." << endl << endl;
+            return true;
+        }
+        else {
+            cout << "Process failed:" << endl;
+            cout << "Account with number " << accountNo << "does not belong to " << name << "." << endl << endl;
+            return false;
+        }
     }
     else {
+        cout << "Process failed:" << endl;
+        cout << "Account with number " << accountNo << " does not exist." << endl << endl;
         return false;
     }
 }
@@ -30,11 +43,17 @@ bool Bank::admitExistingPerson(string name, int currency, int accountNo)
 bool Bank::dismissPerson()
 {
     if (numberOfPeople > 0) {
+        string name = people.getHeadName();
+        int currency = people.getHeadCurrency();
         people.dequeue();
         numberOfPeople--;
+        cout << "Process successful:" << endl;
+        cout << "Person " << name << " with currency " << currency << " has been dismissed from the bank." << endl << endl;
         return true;
     }
     else {
+        cout << "Process failed:" << endl;
+        cout << "The bank queue is empty." << endl << endl;
         return false;
     }
 }
@@ -42,7 +61,14 @@ bool Bank::dismissPerson()
 bool Bank::registerAccount(int initialBalance)
 {
     if (numberOfPeople > 0) {
-        if (initialBalance > people.getHeadCurrency() || accounts.accountExists(people.getHeadAccountNo())) {
+        if (accounts.accountExists(people.getHeadAccountNo())) {
+            cout << "Process failed:" << endl;
+            cout << "Person " << people.getHeadName() << " has another account with number " << people.getHeadAccountNo() << "." << endl << endl;
+            return false;
+        }
+        else if (initialBalance > people.getHeadCurrency()){
+            cout << "Process failed:" << endl;
+            cout << "Initial balance " << initialBalance << " exceeds the currency " << people.getHeadCurrency() << " person " << people.getHeadName() << " has." << endl << endl;
             return false;
         }
         else {
@@ -54,10 +80,14 @@ bool Bank::registerAccount(int initialBalance)
             people.setHeadAccountNo(availableNo);
             accounts.insertToHead(BankAccount(availableNo, people.getHeadName(), initialBalance));
             numberOfAccounts++;
+            cout << "Process successful:" << endl;
+            cout << "Account with number " << availableNo << " and initial balance " << initialBalance << " has been registered to person " << people.getHeadName() << "." << endl << endl;
             return true;
         }
     }
     else {
+        cout << "Process failed:" << endl;
+        cout << "The bank queue is empty." << endl << endl;
         return false;
     }
 }
@@ -74,10 +104,14 @@ bool Bank::terminateAccount()
             return true;
         }
         else {
+            cout << "Process failed:" << endl;
+            cout << "Person " << people.getHeadName() << " does not have a registered account." << endl << endl;
             return false;
         }
     }
     else {
+        cout << "Process failed:" << endl;
+        cout << "The bank queue is empty." << endl << endl;
         return false;
     }
 }
@@ -100,6 +134,8 @@ bool Bank::deposit(int amount)
         }
     }
     else {
+        cout << "Process failed:" << endl;
+        cout << "The bank queue is empty." << endl << endl;
         return false;
     }
 }
@@ -123,6 +159,8 @@ bool Bank::withdraw(int amount)
         }
     }
     else {
+        cout << "Process failed:" << endl;
+        cout << "The bank queue is empty." << endl << endl;
         return false;
     }
 }
@@ -145,6 +183,8 @@ bool Bank::transferToAccount(int accountNo, int amount)
         }
     }
     else {
+        cout << "Process failed:" << endl;
+        cout << "The bank queue is empty." << endl << endl;
         return false;
     }
 }
