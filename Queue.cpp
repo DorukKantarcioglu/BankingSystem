@@ -88,10 +88,9 @@ void Queue::dequeue()
 void Queue::display() const
 {
     if (isEmpty()) {
-        cout << "The queue is empty." << endl;
+        cout << "The bank queue is empty." << endl << endl;
     }
     else {
-        cout << "The queue items:" << endl;
         Node* curr = head;
         while (curr != NULL) {
             cout << curr->data << '\n';

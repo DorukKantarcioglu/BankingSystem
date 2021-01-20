@@ -43,10 +43,9 @@ bool LinkedList::isEmpty() const
 void LinkedList::display() const
 {
     if (isEmpty()) {
-        cout << "The list is empty." << endl;
+        cout << "There are no registered accounts." << endl << endl;
     }
     else {
-        cout << "The list items:" << endl;
         Node* curr = head;
         while (curr != NULL) {
             cout << curr->data << '\n';

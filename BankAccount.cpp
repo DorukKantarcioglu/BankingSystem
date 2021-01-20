@@ -17,7 +17,7 @@ BankAccount::BankAccount(int accountNo, string accountName, int accountBalance)
 
 ostream& operator <<(ostream& os, const BankAccount& account)
 {
-    os << "Account number: " << account.getNumber() << "\nAccount holder: " << account.getName() << "\nAccount balance: " << account.getBalance();
+    os << "Account number: " << account.getNumber() << '\t' << "Holder: " << account.getName() << '\t' << "Balance: " << account.getBalance();
     return os;
 }
 

@@ -29,13 +29,13 @@ bool Bank::admitExistingPerson(string name, int currency, int accountNo)
         }
         else {
             cout << "Process failed:" << endl;
-            cout << "Account with number " << accountNo << "does not belong to " << name << "." << endl << endl;
+            cout << "Account number " << accountNo << "does not belong to " << name << "." << endl << endl;
             return false;
         }
     }
     else {
         cout << "Process failed:" << endl;
-        cout << "Account with number " << accountNo << " does not exist." << endl << endl;
+        cout << "Account number " << accountNo << " does not exist." << endl << endl;
         return false;
     }
 }
@@ -101,6 +101,8 @@ bool Bank::terminateAccount()
             people.setHeadCurrency(true, account.getBalance());
             people.setHeadAccountNo(0);
             numberOfAccounts--;
+            cout << "Process successful:" << endl;
+            cout << "Account number " << account.getNumber() << " has been terminated. Funds are handed to holder " << people.getHeadName() << "." << endl << endl;
             return true;
         }
         else {
@@ -121,15 +123,21 @@ bool Bank::deposit(int amount)
     if (numberOfPeople > 0) {
         if (accounts.accountExists(people.getHeadAccountNo())) {
             if (amount > people.getHeadCurrency()) {
+                cout << "Process failed:" << endl;
+                cout << "Deposit amount " << amount << " exceeds the currency " << people.getHeadCurrency() << " person " << people.getHeadName() << " has." << endl << endl;
                 return false;
             }
             else {
                 people.setHeadCurrency(false, amount);
                 accounts.depositToAccount(people.getHeadAccountNo(), amount);
+                cout << "Process successful:" << endl;
+                cout <<  amount << " has been deposited to account number " << people.getHeadAccountNo() << "." << endl << endl;
                 return true;
             }
         }
         else {
+            cout << "Process failed:" << endl;
+            cout << "Person " << people.getHeadName() << " does not have a registered account." << endl << endl;
             return false;
         }
     }
@@ -146,15 +154,21 @@ bool Bank::withdraw(int amount)
         BankAccount account;
         if (accounts.getAccount(people.getHeadAccountNo(), account)) {
             if (account.getBalance() < amount) {
+                cout << "Process failed:" << endl;
+                cout << "Withdraw amount " << amount << " exceeds the balance " << account.getBalance() << " of account number " << account.getNumber() << "." << endl << endl;
                 return false;
             }
             else {
                 people.setHeadCurrency(true, amount);
                 accounts.withdrawFromAccount(people.getHeadAccountNo(), amount);
+                cout << "Process successful:" << endl;
+                cout << amount << " has been withdrawn from account number " << account.getNumber() << "." << endl << endl;
                 return true;
             }
         }
         else {
+            cout << "Process failed:" << endl;
+            cout << "Person " << people.getHeadName() << " does not have a registered account." << endl << endl;
             return false;
         }
     }
@@ -170,15 +184,21 @@ bool Bank::transferToAccount(int accountNo, int amount)
     if (numberOfPeople > 0) {
         if (accounts.accountExists(accountNo)) {
             if (amount > people.getHeadCurrency()) {
+                cout << "Process failed:" << endl;
+                cout << "Transfer amount " << amount << " exceeds the currency " << people.getHeadCurrency() << " person " << people.getHeadName() << " has." << endl << endl;
                 return false;
             }
             else {
                 people.setHeadCurrency(false, amount);
                 accounts.depositToAccount(accountNo, amount);
+                cout << "Process successful:" << endl;
+                cout << amount << " has been transfered to account number " << accountNo << "." << endl << endl;
                 return true;
             }
         }
         else {
+            cout << "Process failed:" << endl;
+            cout << "Account number " << accountNo << " does not exist." << endl << endl;
             return false;
         }
     }
@@ -192,10 +212,9 @@ bool Bank::transferToAccount(int accountNo, int amount)
 void Bank::print() const
 {
     cout << "Number of people in the bank: " << numberOfPeople << endl;
-    cout << "Number of bank accounts: " << numberOfAccounts << endl;
-    cout << "Account infos:" << endl;
+    cout << "Number of registered bank accounts: " << numberOfAccounts << endl << endl;
+    cout << "Account information:" << endl;
     accounts.display();
-    cout << endl;
-    cout << "People info" << endl;
+    cout << "People information:" << endl;
     people.display();
 }

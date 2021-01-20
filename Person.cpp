@@ -10,7 +10,13 @@ Person::Person(string personName, int personCurrency, int personAccountNo)
 
 ostream& operator <<(ostream& os, const Person& person)
 {
-    os << "Name of individual: " << person.getName() << "\nCurrency: " << person.getCurrency();
+    os << "Name: " << person.getName() << '\t' << "Currency: " << person.getCurrency() << '\t';
+    if (person.getAccountNo() > 0) {
+        os << "Account number: " << person.getAccountNo();
+    }
+    else {
+        os << "No registered account";
+    }
     return os;
 }
 
