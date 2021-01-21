@@ -12,7 +12,7 @@ bool Bank::admitNewPerson(string name, int currency)
     people.enqueue(Person(name, currency));
     numberOfPeople++;
     cout << "Process successful:" << endl;
-    cout << "New person " << name << " with currency " << currency << " has been admitted to the bank." << endl;
+    cout << "New person " << name << " with currency " << currency << " has been admitted to the bank." << endl << endl;
     return true;
 }
 
@@ -213,8 +213,13 @@ void Bank::print() const
 {
     cout << "Number of people in the bank: " << numberOfPeople << endl;
     cout << "Number of registered bank accounts: " << numberOfAccounts << endl << endl;
-    cout << "Account information:" << endl;
-    accounts.display();
     cout << "People information:" << endl;
     people.display();
+    cout << "Account information:" << endl;
+    accounts.display();
+}
+
+void Bank::printHead() const
+{
+    people.displayHead();
 }

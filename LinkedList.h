@@ -10,10 +10,10 @@ class LinkedList
         LinkedList(const LinkedList&);
         ~LinkedList();
         bool isEmpty() const;
-        void display() const;
         void insertToHead(LinkedListItem);
         void insertToTail(LinkedListItem);
         void remove(LinkedListItem);
+        void display() const;
         // Methods to adjust inter/intra-account transactions:
         bool accountExists(int) const;
         bool getAccount(int AccountNo, BankAccount&) const;

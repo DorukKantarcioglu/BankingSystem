@@ -39,6 +39,7 @@
 		<Unit filename="BankAccount.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
+		<Unit filename="BankingSystem.cpp" />
 		<Unit filename="LinkedList.cpp" />
 		<Unit filename="LinkedList.h">
 			<Option target="&lt;{~None~}&gt;" />
@@ -51,7 +52,6 @@
 		<Unit filename="Queue.h">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
-		<Unit filename="main.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

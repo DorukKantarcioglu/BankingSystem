@@ -40,21 +40,6 @@ bool LinkedList::isEmpty() const
     return head == NULL;
 }
 
-void LinkedList::display() const
-{
-    if (isEmpty()) {
-        cout << "There are no registered accounts." << endl << endl;
-    }
-    else {
-        Node* curr = head;
-        while (curr != NULL) {
-            cout << curr->data << '\n';
-            curr = curr->next;
-        }
-        cout << endl;
-    }
-}
-
 void LinkedList::insertToHead(LinkedListItem item)
 {
     Node* newNode = new Node;
@@ -104,6 +89,21 @@ void LinkedList::remove(LinkedListItem item)
                 delete target;
             }
         }
+    }
+}
+
+void LinkedList::display() const
+{
+    if (isEmpty()) {
+        cout << "There are no registered accounts." << endl << endl;
+    }
+    else {
+        Node* curr = head;
+        while (curr != NULL) {
+            cout << curr->data << '\n';
+            curr = curr->next;
+        }
+        cout << endl;
     }
 }
 

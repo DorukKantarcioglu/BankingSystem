@@ -16,6 +16,7 @@ class Bank
         bool withdraw(int);
         bool transferToAccount(int, int);
         void print() const;
+        void printHead() const;
     private:
         int numberOfPeople, numberOfAccounts;
         Queue people;

@@ -14,6 +14,7 @@ class Queue
         void enqueue(QueueItemType);
         void dequeue();
         void display() const;
+        void displayHead() const;
         // Methods to access/modify the head's data members
         std::string getHeadName() const;
         int getHeadCurrency() const;

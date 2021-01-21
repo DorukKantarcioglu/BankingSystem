@@ -100,6 +100,17 @@ void Queue::display() const
     }
 }
 
+void Queue::displayHead() const
+{
+    if (isEmpty()) {
+        cout << "The bank queue is empty." << endl << endl;
+    }
+    else {
+        cout << "Information of the person in front of the queue:" << endl;
+        cout << head->data << endl << endl;
+    }
+}
+
 string Queue::getHeadName() const
 {
     return head->data.getName();

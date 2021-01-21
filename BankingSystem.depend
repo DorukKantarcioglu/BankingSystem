@@ -1,19 +1,19 @@
 # depslib dependency file v1.0
-1611161521 source:c:\users\doruk_etacptp\desktop\bankingsystem\linkedlist.cpp
+1611221422 source:c:\users\doruk_etacptp\desktop\bankingsystem\linkedlist.cpp
 	"LinkedList.h"
 	<iostream>
 
-1610894233 c:\users\doruk_etacptp\desktop\bankingsystem\linkedlist.h
+1611221423 c:\users\doruk_etacptp\desktop\bankingsystem\linkedlist.h
 	"BankAccount.h"
 
-1611161521 source:c:\users\doruk_etacptp\desktop\bankingsystem\queue.cpp
+1611225095 source:c:\users\doruk_etacptp\desktop\bankingsystem\queue.cpp
 	"Queue.h"
 	<iostream>
 
-1610893193 c:\users\doruk_etacptp\desktop\bankingsystem\queue.h
+1611221422 c:\users\doruk_etacptp\desktop\bankingsystem\queue.h
 	"Person.h"
 
-1611159671 source:c:\users\doruk_etacptp\desktop\bankingsystem\main.cpp
+1611219927 source:c:\users\doruk_etacptp\desktop\bankingsystem\main.cpp
 	"Bank.h"
 
 1611160464 source:c:\users\doruk_etacptp\desktop\bankingsystem\bankaccount.cpp
@@ -30,10 +30,13 @@
 	<iostream>
 	<string>
 
-1611161369 source:c:\users\doruk_etacptp\desktop\bankingsystem\bank.cpp
+1611222526 source:c:\users\doruk_etacptp\desktop\bankingsystem\bank.cpp
 	"Bank.h"
 
-1610969706 c:\users\doruk_etacptp\desktop\bankingsystem\bank.h
+1611221453 c:\users\doruk_etacptp\desktop\bankingsystem\bank.h
 	"Queue.h"
 	"LinkedList.h"
+
+1611225095 source:c:\users\doruk_etacptp\desktop\bankingsystem\bankingsystem.cpp
+	"Bank.h"
 
