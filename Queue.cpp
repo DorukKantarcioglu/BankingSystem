@@ -1,13 +1,19 @@
+/**
+ * Implementation for the Queue class.
+ * Author: Doruk Kantarcýoðlu
+ */
 #include "Queue.h"
 #include <iostream>
 using namespace std;
 
+/// Default constructor
 Queue::Queue()
 {
     head = NULL;
     tail = NULL;
 }
 
+/// Copy constructor
 Queue::Queue(const Queue& copy)
 {
     if (copy.head == NULL) {
@@ -28,6 +34,7 @@ Queue::Queue(const Queue& copy)
     }
 }
 
+/// Destructor
 Queue::~Queue()
 {
     Node* curr;

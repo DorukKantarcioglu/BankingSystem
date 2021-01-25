@@ -1,3 +1,7 @@
+/**
+ * Interface for the Queue class.
+ * Author: Doruk Kantarcýoðlu
+ */
 #ifndef QUEUE_H_INCLUDED
 #define QUEUE_H_INCLUDED
 #include "Person.h"
@@ -15,7 +19,7 @@ class Queue
         void dequeue();
         void display() const;
         void displayHead() const;
-        // Methods to access/modify the head's data members
+        /// Application-specific functions
         std::string getHeadName() const;
         int getHeadCurrency() const;
         int getHeadAccountNo() const;

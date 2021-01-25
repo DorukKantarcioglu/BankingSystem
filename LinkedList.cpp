@@ -1,12 +1,18 @@
+/**
+ * Implementation for the LinkedList class.
+ * Author: Doruk Kantarcýoðlu
+ */
 #include "LinkedList.h"
 #include <iostream>
 using namespace std;
 
+/// Default constructor
 LinkedList::LinkedList()
 {
     head = NULL;
 }
 
+/// Copy constructor
 LinkedList::LinkedList(const LinkedList& copy)
 {
     if (copy.head == NULL) {
@@ -25,6 +31,7 @@ LinkedList::LinkedList(const LinkedList& copy)
     }
 }
 
+/// Destructor
 LinkedList::~LinkedList()
 {
     Node* curr;
@@ -157,6 +164,7 @@ bool LinkedList::withdrawFromAccount(int accountNo, int amount)
     return false;
 }
 
+/// Private function
 LinkedList::Node* LinkedList::getNode(LinkedListItem item)
 {
     if (isEmpty()) {

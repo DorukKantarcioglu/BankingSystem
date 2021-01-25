@@ -1,3 +1,7 @@
+/**
+ * Interface for the Person class.
+ * Author: Doruk Kantarcýoðlu
+ */
 #ifndef PERSON_H_INCLUDED
 #define PERSON_H_INCLUDED
 #include <iostream>

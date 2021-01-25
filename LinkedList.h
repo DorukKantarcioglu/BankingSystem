@@ -1,3 +1,7 @@
+/**
+ * Interface for the LinkedList class.
+ * Author: Doruk Kantarcýoðlu
+ */
 #ifndef LINKEDLIST_H_INCLUDED
 #define LINKEDLIST_H_INCLUDED
 #include "BankAccount.h"
@@ -14,7 +18,7 @@ class LinkedList
         void insertToTail(LinkedListItem);
         void remove(LinkedListItem);
         void display() const;
-        // Methods to adjust inter/intra-account transactions:
+        /// Application-specific functions
         bool accountExists(int) const;
         bool getAccount(int AccountNo, BankAccount&) const;
         bool depositToAccount(int, int);

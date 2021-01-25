@@ -1,3 +1,7 @@
+/**
+ * Interface for the Bank class.
+ * Author: Doruk Kantarcýoðlu
+ */
 #ifndef BANK_H_INCLUDED
 #define BANK_H_INCLUDED
 #include "Queue.h"

@@ -1,6 +1,11 @@
+/**
+ * Implementation for the Person class.
+ * Author: Doruk Kantarcýoðlu
+ */
 #include "Person.h"
 using namespace std;
 
+/// Parameterized constructor with default arguments
 Person::Person(string personName, int personCurrency, int personAccountNo)
 {
     name = personName;
@@ -8,6 +13,7 @@ Person::Person(string personName, int personCurrency, int personAccountNo)
     accountNo = personAccountNo;
 }
 
+/// Operator overload
 ostream& operator <<(ostream& os, const Person& person)
 {
     os << "Name: " << person.getName() << '\t' << "Currency: " << person.getCurrency() << '\t';
@@ -20,6 +26,7 @@ ostream& operator <<(ostream& os, const Person& person)
     return os;
 }
 
+/// Operator overload
 void Person::operator =(const Person& person)
 {
     if (this != &person) {

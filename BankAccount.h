@@ -1,3 +1,7 @@
+/**
+ * Interface for the BankAccount class.
+ * Author: Doruk Kantarcýoðlu
+ */
 #ifndef BANKACCOUNT_H_INCLUDED
 #define BANKACCOUNT_H_INCLUDED
 #include <iostream>

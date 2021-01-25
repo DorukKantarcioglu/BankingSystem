@@ -1,6 +1,12 @@
+/**
+ * Implementation for the Bank class.
+ * Includes the functions to be called in the driver file.
+ * Author: Doruk Kantarcýoðlu
+ */
 #include "Bank.h"
 using namespace std;
 
+/// Default constructor
 Bank::Bank()
 {
     numberOfPeople = 0;
@@ -219,6 +225,7 @@ void Bank::print() const
     accounts.display();
 }
 
+/// Displays the information of the person in front of the queue.
 void Bank::printHead() const
 {
     people.displayHead();
