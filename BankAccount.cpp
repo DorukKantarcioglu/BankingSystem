@@ -1,6 +1,6 @@
 /**
  * Implementation for the BankAccount class.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #include "BankAccount.h"
 using namespace std;

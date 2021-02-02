@@ -1,6 +1,6 @@
 /**
  * Implementation for the Person class.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #include "Person.h"
 using namespace std;

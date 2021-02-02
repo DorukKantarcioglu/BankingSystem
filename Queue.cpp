@@ -1,9 +1,8 @@
 /**
  * Implementation for the Queue class.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #include "Queue.h"
-#include <iostream>
 using namespace std;
 
 /// Default constructor

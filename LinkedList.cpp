@@ -1,9 +1,8 @@
 /**
  * Implementation for the LinkedList class.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #include "LinkedList.h"
-#include <iostream>
 using namespace std;
 
 /// Default constructor

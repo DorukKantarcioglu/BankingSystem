@@ -1,6 +1,6 @@
 /**
  * Interface for the BankAccount class.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #ifndef BANKACCOUNT_H_INCLUDED
 #define BANKACCOUNT_H_INCLUDED

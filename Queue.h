@@ -1,6 +1,6 @@
 /**
  * Interface for the Queue class.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #ifndef QUEUE_H_INCLUDED
 #define QUEUE_H_INCLUDED

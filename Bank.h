@@ -1,6 +1,6 @@
 /**
  * Interface for the Bank class.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #ifndef BANK_H_INCLUDED
 #define BANK_H_INCLUDED

@@ -1,6 +1,6 @@
 /**
  * Interface for the Person class.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #ifndef PERSON_H_INCLUDED
 #define PERSON_H_INCLUDED

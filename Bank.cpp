@@ -1,7 +1,7 @@
 /**
  * Implementation for the Bank class.
  * Includes the functions to be called in the driver file.
- * Author: Doruk Kantarcýoðlu
+ * Author: DorukKantarcioglu
  */
 #include "Bank.h"
 using namespace std;
