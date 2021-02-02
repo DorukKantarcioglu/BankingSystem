@@ -32,7 +32,9 @@ int main()
                 string name;
                 int currency;
                 cout << "Please enter the name and the currency of the new person accordingly:" << endl;
-                cin >> name >> currency;
+                cin.ignore();
+                getline(cin, name);
+                cin >> currency;
                 bank.admitNewPerson(name, currency);
                 cout << endl;
                 break;
@@ -41,7 +43,9 @@ int main()
                 string name;
                 int currency, accountNo;
                 cout << "Please enter the name, currency and the account number for the existing person accordingly:" << endl;
-                cin >> name >> currency >> accountNo;
+                cin.ignore();
+                getline(cin, name);
+                cin >> currency >> accountNo;
                 bank.admitExistingPerson(name, currency, accountNo);
                 cout << endl;
                 break;
@@ -54,6 +58,7 @@ int main()
             case 4: {
                 int initialBalance;
                 cout << "Please enter the initial balance of the account:" << endl;
+                cin.ignore();
                 cin >> initialBalance;
                 bank.registerAccount(initialBalance);
                 cout << endl;
@@ -67,6 +72,7 @@ int main()
             case 6: {
                 int amount;
                 cout << "Please enter the amount to be deposited to the account:" << endl;
+                cin.ignore();
                 cin >> amount;
                 bank.deposit(amount);
                 cout << endl;
@@ -75,6 +81,7 @@ int main()
             case 7: {
                 int amount;
                 cout << "Please enter the amount to be withdrawn from the account:" << endl;
+                cin.ignore();
                 cin >> amount;
                 bank.withdraw(amount);
                 cout << endl;
@@ -83,6 +90,7 @@ int main()
             case 8: {
                 int accountNo, currency;
                 cout << "Please enter the account number and the transfer amount accordingly:" << endl;
+                cin.ignore();
                 cin >> accountNo >> currency;
                 bank.transferToAccount(accountNo, currency);
                 cout << endl;
@@ -98,7 +106,7 @@ int main()
                 break;
             }
             default:
-                cout << "Invalid input. Please enter one of the operation codes listed above." << endl;
+                cout << "Invalid input. Please enter one of the operation codes listed above." << endl << endl;
         }
     }
 }
