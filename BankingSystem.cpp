@@ -1,7 +1,7 @@
 /**
  * Driver file for the banking system.
  * Includes the main function in which it presents the user with operation codes.
- * Operation code 0 will termiante the process.
+ * Operation code 0 will terminate the process.
  * Author: DorukKantarcioglu
  */
 #include "Bank.h"
